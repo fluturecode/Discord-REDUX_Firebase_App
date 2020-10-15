@@ -42,7 +42,7 @@ function Sidebar() {
 	return (
 		<div className='sidebar'>
 			<div className='sidebar__top'>
-				<h3>Sidebar Top</h3>
+				<h3>FlutureCode</h3>
 				<ExpandMoreIcon />
 			</div>
 
@@ -57,8 +57,12 @@ function Sidebar() {
 				</div>
 
 				<div className='sidebar_channelsList'>
-					{channels.map((channel) => (
-						<SidebarChannel />
+					{channels.map(({ id, channel }) => (
+						<SidebarChannel
+							key={id}
+							id={id}
+							channelName={channel.channelName}
+						/>
 					))}
 				</div>
 			</div>
